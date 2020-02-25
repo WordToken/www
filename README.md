@@ -1,1 +1,1 @@
-# WordToken site.
+# WordToken site.git
