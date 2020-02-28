@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
@@ -36,7 +36,7 @@ jobs:
             - public
   deploy_qa:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
@@ -46,9 +46,9 @@ jobs:
       - aws-s3/sync:
           from: public
           to: "s3://qa.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --delete \
             --acl public-read \
@@ -60,9 +60,9 @@ jobs:
       - aws-s3/copy:
           from: public/sw.js
           to: "s3://qa.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
@@ -70,9 +70,9 @@ jobs:
       - aws-s3/copy:
           from: public/page-data/
           to: "s3://qa.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
@@ -83,9 +83,9 @@ jobs:
       - aws-s3/copy:
           from: public
           to: "s3://qa.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
@@ -95,7 +95,7 @@ jobs:
             --include "*.html"
   deploy_prod:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
@@ -105,9 +105,9 @@ jobs:
       - aws-s3/sync:
           from: public
           to: "s3://www.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --delete \
             --acl public-read \
@@ -119,9 +119,9 @@ jobs:
       - aws-s3/copy:
           from: public/sw.js
           to: "s3://www.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
@@ -129,9 +129,9 @@ jobs:
       - aws-s3/copy:
           from: public/page-data/
           to: "s3://www.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
@@ -142,9 +142,9 @@ jobs:
       - aws-s3/copy:
           from: public
           to: "s3://www.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID_FSN
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY_FSN
-          aws-region: AWS_REGION_FSN
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          aws-region: AWS_REGION
           arguments: |
             --acl public-read \
             --metadata-directive REPLACE \
