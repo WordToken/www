@@ -8,7 +8,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
@@ -36,7 +36,7 @@ jobs:
             - public
   deploy_qa:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
@@ -95,7 +95,7 @@ jobs:
             --include "*.html"
   deploy_prod:
     docker:
-      - image: circle/node:12.13.1
+      - image: circleci/node:12.13.1
     working_directory: ~/wordtoken/www
     parallelism: 1
     steps:
