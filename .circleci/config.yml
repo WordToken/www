@@ -58,16 +58,6 @@ jobs:
             --exclude page-data/*.json \
             --exclude *.html
       - aws-s3/copy:
-          from: public/sw.js
-          to: "s3://qa.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_REGION
-          arguments: |
-            --acl public-read \
-            --metadata-directive REPLACE \
-            --cache-control "public, max-age=0, must-revalidate"
-      - aws-s3/copy:
           from: public/page-data/
           to: "s3://qa.wordtoken.com"
           aws-access-key-id: AWS_ACCESS_KEY_ID
@@ -116,16 +106,6 @@ jobs:
             --exclude sw.js \
             --exclude page-data/*.json \
             --exclude *.html
-      - aws-s3/copy:
-          from: public/sw.js
-          to: "s3://www.wordtoken.com"
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-region: AWS_REGION
-          arguments: |
-            --acl public-read \
-            --metadata-directive REPLACE \
-            --cache-control "public, max-age=0, must-revalidate"
       - aws-s3/copy:
           from: public/page-data/
           to: "s3://www.wordtoken.com"
