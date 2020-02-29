@@ -29,7 +29,7 @@ jobs:
           key: dep-{{ .Branch }}-{{ .Revision }}
       - run:
           name: clear public and cache directories
-          command: gatsby clean
+          command: npx gatsby clean
       - run:
           name: build gatsby files
           command: npx gatsby build
