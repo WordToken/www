@@ -28,6 +28,9 @@ jobs:
             - src
           key: dep-{{ .Branch }}-{{ .Revision }}
       - run:
+          name: clear public and cache directories
+          command: gatsby clean
+      - run:
           name: build gatsby files
           command: npx gatsby build
       - persist_to_workspace:
