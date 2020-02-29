@@ -28,9 +28,6 @@ jobs:
             - src
           key: dep-{{ .Branch }}-{{ .Revision }}
       - run:
-          name: clear public and cache directories
-          command: npx gatsby clean
-      - run:
           name: build gatsby files
           command: npx gatsby build
       - persist_to_workspace:
@@ -62,7 +59,7 @@ jobs:
             --exclude *.html
       - aws-s3/copy:
           from: public/page-data/
-          to: "s3://qa.wordtoken.com"
+          to: "s3://qa.wordtoken.com/page-data/"
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_REGION
@@ -111,7 +108,7 @@ jobs:
             --exclude *.html
       - aws-s3/copy:
           from: public/page-data/
-          to: "s3://www.wordtoken.com"
+          to: "s3://www.wordtoken.com/page-data"
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           aws-region: AWS_REGION
