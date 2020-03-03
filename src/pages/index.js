@@ -1,22 +1,21 @@
 import React from "react"
 import { Link } from "gatsby"
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Logo from "../components/logo"
+import { Input } from '@material-ui/core';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-    <div><Link to="/blog/">Blog</Link></div>
-    <div><Link to="/docs/">Docs</Link></div>
+    <Logo />
+    <Input />
   </Layout>
 )
 
