@@ -15,17 +15,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dep-{{ .Branch }}-{{ .Revision }}
-            - dep-{{ .Branch }}-
-            - dep-
+            - wordtoken-{{ checksum "package-lock.json" }}
       - run:
           name: install node dependencies 
           command: npm install
       - save_cache:
           paths:
-            - .git
             - node_modules
-          key: dep-{{ .Branch }}-{{ .Revision }}
+          key: wordtoken-{{ checksum "package-lock.json" }}
       - run:
           name: build gatsby files
           command: npx gatsby build
