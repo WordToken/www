@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => (
     <ListElement>
       <li><Link to="/blog">Blog</Link><span>•</span></li>
       <li><Link to="/docs">Docs</Link><span>•</span></li>
-      <li><Link to="/learn">Learn</Link><span>•</span></li>
+      {/* <li><Link to="/learn">Learn</Link><span>•</span></li> */}
       <li><a href="http://core.wordtoken.com">Sign In</a></li>
     </ListElement>
   </HeaderElement>
