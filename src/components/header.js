@@ -4,19 +4,14 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#fff`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+ <HeaderElement>
     <ListElement>
       <li><Link to="/blog">Blog</Link><span>•</span></li>
       <li><Link to="/docs">Docs</Link><span>•</span></li>
       <li><Link to="/learn">Learn</Link><span>•</span></li>
       <li><a href="http://core.wordtoken.com">Sign In</a></li>
     </ListElement>
-  </header>
+  </HeaderElement>
 )
 
 
@@ -25,12 +20,18 @@ const Header = ({ siteTitle }) => (
 export default Header
 
 
-
+const HeaderElement = styled.header`
+    background: #fff;
+    /* border-bottom: 1px solid #f8f8f8; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    justify-items: center;
+    padding: 1%;
+`
 const ListElement = styled.ul`
   display: flex;
-  padding: 1%;
   align-items: center;
-  justify-content: flex-end;
   margin: 0;
 
   a {
@@ -44,6 +45,7 @@ const ListElement = styled.ul`
     font-size: 16px;
     text-transform: uppercase;
     font-family: 'acherus-militant-1-light-otf';
+    margin: 0;
 
     :last-child {
       display: flex;
