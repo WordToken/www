@@ -25,7 +25,6 @@ jobs:
           paths:
             - .git
             - node_modules
-            - src
           key: dep-{{ .Branch }}-{{ .Revision }}
       - run:
           name: build gatsby files
