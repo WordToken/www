@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Logo from '../components/logo'
 
 const Header = ({ siteTitle }) => (
  <HeaderElement>
+    <Link to="/"><Logo /></Link>
     <ListElement>
       <li><Link to="/blog">Blog</Link><span>•</span></li>
       <li><Link to="/docs">Docs</Link><span>•</span></li>
@@ -22,18 +24,25 @@ export default Header
 
 const HeaderElement = styled.header`
     background: #fff;
-    /* border-bottom: 1px solid #f8f8f8; */
+    border-bottom: 1px solid #f8f8f8;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     justify-items: center;
-    padding: 1%;
+    padding: 0 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+
+    img {
+      max-width: 80px;
+      margin: 0;
+    }
 `
 const ListElement = styled.ul`
   display: flex;
   align-items: center;
   margin: 0;
-
+  
   a {
     text-decoration: none;
     color: #000;
