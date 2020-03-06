@@ -33,8 +33,12 @@ const HeaderElement = styled.header`
     max-width: 1600px;
     margin: 0 auto;
 
+     > a {
+      height: 80px;
+    }
+
     img {
-      max-width: 80px;
+      max-width: 85px;
       margin: 0;
     }
 `
