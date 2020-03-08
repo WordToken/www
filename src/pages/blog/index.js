@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import { Link } from "gatsby"
 
@@ -11,16 +12,19 @@ const parse = require('url-parse')
 
 const BlogIndexPage = ({ data }) => {
   const { edges } = data.allGhostPost
-  console.log(data, 'data')
-  return (<Layout>
-    <SEO title="Blog" />
-    <h1>Blog</h1>
-    <ul>{edges.map(edge => {
-      const { title, slug } = edge.node
 
-      return <li><Link to={`/blog/${slug}`}>{title}</Link></li>
-    })}</ul>
-  </Layout>)
+  return (<Layout>
+            <SEO title="Blog" />
+            <SectionWrapper>
+              <SectionTitle>Blog</SectionTitle>
+              <SectionList>
+                {edges.map(edge => {
+                  const { title, slug } = edge.node
+                  return <SectionListItem><Link to={`/blog/${slug}`}>{title}</Link></SectionListItem>
+                })}
+              </SectionList>
+            </SectionWrapper>
+          </Layout>)
 }
 
 export const pageQuery = graphql`
@@ -47,3 +51,24 @@ export const pageQuery = graphql`
 
 
 export default BlogIndexPage
+
+
+
+const SectionWrapper = styled.section`
+  margin-top: 100px;
+`
+
+const SectionTitle = styled.h1`
+  text-transform: uppercase;
+  text-align: center;
+`
+
+const SectionList = styled.ul`
+  margin: 50px auto 0 auto;
+  text-align: center;
+`
+
+const SectionListItem = styled.li`
+  font-size: 30px;
+  list-style: none;
+`

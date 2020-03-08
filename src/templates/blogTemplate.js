@@ -1,5 +1,6 @@
 
 import React from "react"
+import styled from 'styled-components'
 import { graphql } from "gatsby"
 import moment from 'moment'
 
@@ -13,14 +14,14 @@ export default function Template({ data }) {
   console.log(moment(), 'moment')
   return (
     <Layout>
-      <div className="blog-post">
+      <BlogPostWrapper>
         <h1>{title}</h1>
         <h2>{moment(published_at).local().format('MMM DD, YYYY')}</h2>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-      </div>
+      </BlogPostWrapper>
     </Layout>
   )
 }
@@ -43,4 +44,9 @@ export const pageQuery = graphql`
       }
     }
   }
+`
+
+
+const BlogPostWrapper = styled.div`
+  margin-top: 50px;
 `
