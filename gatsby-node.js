@@ -7,15 +7,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+      allGhostPost(
+        sort: { order: DESC, fields: [published_at] }
         limit: 1000
       ) {
         edges {
           node {
-            frontmatter {
-              path
-            }
+            slug
+            title
           }
         }
       }
@@ -28,11 +27,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return
   }
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.allGhostPost.edges.forEach(({ node }) => {
+
     createPage({
-      path: node.frontmatter.path,
+      path: `/blog/${node.slug}`,
       component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      context: {
+        title: node.title
+      }, // additional data can be passed via context
     })
   })
 }

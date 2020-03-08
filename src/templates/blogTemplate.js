@@ -6,14 +6,14 @@ import Layout from '../components/layout'
 
 
 export default function Template({ data }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  console.log(frontmatter, 'frontmatter')
+  const { ghostPost } = data // data.markdownRemark holds your post data
+  const { title, html, published_at } = ghostPost
+
   return (
     <Layout>
       <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <h1>{title}</h1>
+        <h2>{published_at}</h2>
         <div
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -23,14 +23,33 @@ export default function Template({ data }) {
   )
 }
 
+// export const pageQuery = graphql`
+//   query($path: String!) {
+//     markdownRemark(frontmatter: { path: { eq: $path } }) {
+//       html
+//       frontmatter {
+//         date(formatString: "MMMM DD, YYYY")
+//         path
+//         title
+//       }
+//     }
+//   }
+// `
+
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($title: String) {
+    ghostPost(title: { eq: $title }) {
+      id
       html
-      frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
-        title
+      slug
+      created_at
+      reading_time
+      excerpt
+      title
+      published_at
+      primary_author {
+        name
       }
     }
   }

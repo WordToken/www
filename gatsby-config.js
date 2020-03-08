@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `WordToken`,
@@ -23,6 +27,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-ghost`,
+        options: {
+          apiUrl: `http://165.227.206.87`,
+          contentApiKey: process.env.CONTENT_API_KEY
+        }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
