@@ -11,7 +11,7 @@ const parse = require('url-parse')
 
 const BlogIndexPage = ({ data }) => {
   const { edges } = data.allGhostPost
-
+  console.log(data, 'data')
   return (<Layout>
     <SEO title="Blog" />
     <h1>Blog</h1>
@@ -25,7 +25,7 @@ const BlogIndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query MyQuery {
-    allGhostPost {
+    allGhostPost(sort: { order:DESC, fields: published_at }) {
       edges {
         node {
           id
