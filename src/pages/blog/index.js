@@ -7,14 +7,12 @@ import Layout from "../../components/layout"
 import Image from "../../components/image"
 import SEO from "../../components/seo"
 
-const parse = require('url-parse') 
-
-
 const BlogIndexPage = ({ data }) => {
   const { edges } = data.allGhostPost
 
   return (<Layout>
             <SEO title="Blog" />
+
             <SectionWrapper>
               <SectionTitle>Blog</SectionTitle>
               <SectionList>
@@ -24,6 +22,7 @@ const BlogIndexPage = ({ data }) => {
                 })}
               </SectionList>
             </SectionWrapper>
+
           </Layout>)
 }
 
@@ -70,5 +69,5 @@ const SectionList = styled.ul`
 
 const SectionListItem = styled.li`
   font-size: 30px;
-  list-style: none;
+  list-style-type: none;
 `

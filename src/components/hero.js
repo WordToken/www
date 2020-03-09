@@ -6,10 +6,10 @@ import HomeBanner from '../assets/home-banner-2.png'
 
 const Hero = () => {
     return (
-        <HeroWrapper>
+        <div>
             <h1>Extract Value from Conversational Data</h1>
             <img src={HomeBanner} />
-        </HeroWrapper>
+        </div>
     )
 }
 

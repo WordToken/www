@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
-
 @font-face {
   font-family: 'acherus-militant-1-light-otf';
   src: url('../assets/fonts/acherus_militant_1_-_light.otf.otf');
 }
+
+@font-face {
+  font-family: 'acherus-militant-1-bold-otf';
+  src: url('../assets/fonts/acherus_militant_1_-_bold.otf.otf');
+}
+
 
 html {
   font-family: sans-serif;
@@ -12,7 +16,7 @@ html {
 }
 body {
   margin: 0;
-  font-family: Arc;
+  font-family: 'acherus-militant-1-light-otf', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
