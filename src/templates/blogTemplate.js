@@ -49,4 +49,12 @@ export const pageQuery = graphql`
 
 const BlogPostWrapper = styled.div`
   margin-top: 50px;
+
+  h1 {
+    font-family: acherus-militant-1-bold-otf;
+  }
+
+  h2 {
+    font-family: acherus-militant-1-light-otf;
+  }
 `

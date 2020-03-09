@@ -60,14 +60,17 @@ const SectionWrapper = styled.section`
 const SectionTitle = styled.h1`
   text-transform: uppercase;
   text-align: center;
+  font-family: acherus-militant-1-bold-otf;
 `
 
 const SectionList = styled.ul`
   margin: 50px auto 0 auto;
   text-align: center;
+  font-family: acherus-militant-1-bold-otf;
 `
 
 const SectionListItem = styled.li`
-  font-size: 30px;
+  font-size: 28px;
   list-style-type: none;
+
 `
