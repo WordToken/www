@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     {
@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-ghost`,
         options: {
-          apiUrl: `http://165.227.206.87`,
+          apiUrl: `https://blog.wordtoken.com`,
           contentApiKey: process.env.CONTENT_API_KEY
         }
     },
@@ -47,6 +47,7 @@ module.exports = {
         icon: `./src/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    'gatsby-plugin-root-import',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

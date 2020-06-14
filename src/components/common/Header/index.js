@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Logo from '../components/logo'
+import Logo from 'src/components/common/Logo'
 
 const Header = ({ siteTitle }) => (
  <HeaderElement>
     <Link to="/"><Logo /></Link>
     <ListElement>
       <li><Link to="/blog">Blog</Link><span>•</span></li>
-      <li><Link to="/docs">Docs</Link><span>•</span></li>
-      <li><Link to="/learn">Learn</Link><span>•</span></li>
+      {/* <li><Link to="/docs">Docs</Link><span>•</span></li>
+      <li><Link to="/docs">Learn</Link><span>•</span></li> */}
       <li><a href="http://core.wordtoken.com">Sign In</a></li>
     </ListElement>
   </HeaderElement>

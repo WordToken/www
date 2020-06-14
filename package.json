@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "wordtoken",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "The website to WordToken.com",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "@sirlemuel",
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "babel-plugin-styled-components": "^1.10.7",
@@ -28,6 +28,7 @@
     "url-parse": "^1.4.7"
   },
   "devDependencies": {
+    "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -45,9 +46,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-default.git"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-default#readme",
+  "main": "gatsby-browser.js"
 }
