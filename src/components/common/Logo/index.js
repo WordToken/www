@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MainLogo from '../images/word-token-logo-1.png'
+import MainLogo from 'src/assets/images/word-token-logo-1.png'
 
 
 
