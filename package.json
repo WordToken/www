@@ -1,5 +1,5 @@
 {
-  "name": "WordToken Site",
+  "name": "wordtoken",
   "private": true,
   "description": "The website to WordToken.com",
   "version": "0.1.0",
@@ -46,9 +46,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-default.git"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-default#readme",
+  "main": "gatsby-browser.js"
 }
