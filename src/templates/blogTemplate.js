@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { graphql } from "gatsby"
 import moment from 'moment'
 
-import Layout from '../components/layout'
+import Layout from 'src/components/common/Layout'
 
 
 export default function Template({ data }) {

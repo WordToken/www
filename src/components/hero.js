@@ -7,7 +7,7 @@ import HomeBanner from '../assets/home-banner-2.png'
 const Hero = () => {
 
     return (<HeroWrapper>
-                <h1>Extract Value from Conversational Data</h1>
+                <h1>Get powerful insights from <br/>social media comments.</h1>
                 <img src={HomeBanner} />
             </HeroWrapper>)
 }
