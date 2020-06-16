@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import MainLogo from 'src/assets/images/word-token-logo-1.png'
+import MainLogo from 'src/assets/images/word-token-logo-bold.png'
 
 
 
@@ -17,9 +17,23 @@ export default Logo
 
 
 const LogoWrapper = styled.div`
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90px; 
+
+    p {
+        color: #1C7AE4;
+        font-size: 30px;
+        text-decoration: none;
+        margin: 0;
+        font-family: 'acherus-militant-1-bold-otf';
+        font-weight: 300;
+    }
+
     img {
-        max-width: 300px;
+        width: 100%;
+        margin: 0;
     }
 `
 

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import Logo from 'src/components/common/Logo'
 
@@ -9,8 +8,6 @@ const Header = ({ siteTitle }) => (
     <Link to="/"><Logo /></Link>
     <ListElement>
       <li><Link to="/blog">Blog</Link><span>•</span></li>
-      {/* <li><Link to="/docs">Docs</Link><span>•</span></li>
-      <li><Link to="/docs">Learn</Link><span>•</span></li> */}
       <li><a href="http://core.wordtoken.com">Sign In</a></li>
     </ListElement>
   </HeaderElement>
@@ -32,25 +29,27 @@ const HeaderElement = styled.header`
     padding: 0 5%;
     max-width: 1600px;
     margin: 0 auto;
+    min-height: 70px;
 
      > a {
-      height: 80px;
-    }
-
-    img {
-      max-width: 85px;
-      margin: 0;
+       text-decoration: none;
     }
 `
 const ListElement = styled.ul`
   display: flex;
   align-items: center;
   margin: 0;
+  color: #000;
+  font-weight: 700;
   
   a {
     text-decoration: none;
     color: #000;
+    font-weight: 700;
 
+    &:hover {
+      color: #1C7AE4;
+    }
   }
 
   li {
@@ -64,14 +63,14 @@ const ListElement = styled.ul`
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #38b6ff;
+      background: #1C7AE4;
       border-radius: 3px;
       width: 80px;
       height: 30px;
 
       a {
           color: #fff;
-          font-weight: 600;
+          font-weight: 700;
           line-height: normal;
           padding-top: 2px;
       }
